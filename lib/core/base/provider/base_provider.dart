@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:market/core/navigation/navigation_service.dart';
 
-class BaseProvider<T> extends ChangeNotifier {
-  T _data;
-
-  BaseProvider(this._data);
-
-  T get data => _data;
-
-  void updateData(T newData) {
-    _data = newData;
-    notifyListeners();
-  }
+class BaseProvider extends ChangeNotifier {
+  NavigationService navigation = NavigationService.instance;
 }

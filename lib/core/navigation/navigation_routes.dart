@@ -13,8 +13,10 @@ class NavigationRoute {
     switch (args.name) {
       case NavigationConstants.DEFAULT:
         return normalNavigate(const SplashView());
-      default:
+      case NavigationConstants.HOME:
         return normalNavigate(const HomeView());
+      default:
+        return normalNavigate(const SplashView());
     }
   }
 

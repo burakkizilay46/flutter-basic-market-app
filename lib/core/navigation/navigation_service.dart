@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:market/core/navigation/INavigationService.dart';
+
+import 'INavigationService.dart';
 
 class NavigationService implements INavigationService {
   static final NavigationService _instance = NavigationService._init();
@@ -7,21 +8,21 @@ class NavigationService implements INavigationService {
 
   NavigationService._init();
 
-  GlobalKey<NavigatorState> navigatiorKey = GlobalKey();
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   bool removeOldRoutes(Route<dynamic> route) => false;
 
   @override
   Future<void> navigateToPage({String? path, Object? data}) async {
-    await navigatiorKey.currentState!.pushNamed(path!, arguments: data);
+    await navigatorKey.currentState!.pushNamed(path!, arguments: data);
   }
 
   @override
   Future<void> navigateToPageClear({String? path, Object? data}) async {
-    await navigatiorKey.currentState!.pushNamedAndRemoveUntil(path!, removeOldRoutes, arguments: data);
+    await navigatorKey.currentState!.pushNamedAndRemoveUntil(path!, removeOldRoutes, arguments: data);
   }
 
   @override
   Future<void> pop() async {
-    await navigatiorKey.currentState!.maybePop();
+    await navigatorKey.currentState!.maybePop();
   }
 }
