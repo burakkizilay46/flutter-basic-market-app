@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:market/core/base/provider/base_provider.dart';
 import 'package:market/core/constants/navigation/navigation_constants.dart';
 
@@ -9,6 +8,10 @@ class SplashProvider extends BaseProvider {
   Timer? _timer;
   bool _pageTimeIsDone = false;
   bool get pageTimeIsDone => _pageTimeIsDone;
+
+  SplashProvider() {
+    startTimer();
+  }
 
   void startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {

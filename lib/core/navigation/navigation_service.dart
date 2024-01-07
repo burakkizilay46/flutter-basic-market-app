@@ -8,7 +8,7 @@ class NavigationService implements INavigationService {
 
   NavigationService._init();
 
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   bool removeOldRoutes(Route<dynamic> route) => false;
 
   @override

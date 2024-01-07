@@ -19,9 +19,6 @@ class _SplashContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final splashProvider = Provider.of<SplashProvider>(context);
-
-    splashProvider.startTimer();
-
     return Scaffold(
       backgroundColor: context.mainAppColor,
       body: Center(
