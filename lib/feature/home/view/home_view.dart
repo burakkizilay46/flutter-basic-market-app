@@ -36,7 +36,10 @@ class _HomeContent extends StatelessWidget {
         title: const Text("Market"),
       ),
       body: Center(
-        child: _widgetOptions.elementAt(homeProvider.pageIndex),
+        child: Padding(
+          padding: EdgeInsetsDirectional.all(8),
+          child: _widgetOptions.elementAt(homeProvider.pageIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
