@@ -14,15 +14,15 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    const List<Widget> _widgetOptions = <Widget>[MarketView(), BasketView()];
+    const List<Widget> widgetOptions = <Widget>[MarketView(), BasketView()];
 
-    return ChangeNotifierProvider(create: (_) => HomeProvider(), child: _HomeContent(widgetOptions: _widgetOptions));
+    return ChangeNotifierProvider(
+        create: (_) => HomeProvider(), child: const _HomeContent(widgetOptions: widgetOptions));
   }
 }
 
 class _HomeContent extends StatelessWidget {
   const _HomeContent({
-    super.key,
     required List<Widget> widgetOptions,
   }) : _widgetOptions = widgetOptions;
 
