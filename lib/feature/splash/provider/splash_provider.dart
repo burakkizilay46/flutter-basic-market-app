@@ -16,7 +16,7 @@ class SplashProvider extends BaseProvider {
   void startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       time++;
-      if (time == 5) {
+      if (time == 2) {
         _timer?.cancel();
         _pageTimeIsDone = true;
         notifyListeners();

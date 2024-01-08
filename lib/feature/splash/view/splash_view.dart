@@ -23,7 +23,7 @@ class _SplashContent extends StatelessWidget {
       backgroundColor: context.mainAppColor,
       body: Center(
         child: Text(
-          '${splashProvider.pageTimeIsDone}',
+          'Welcome Market',
           style: context.normalTextStyle.copyWith(color: context.appWhite, fontSize: 32),
         ),
       ),
