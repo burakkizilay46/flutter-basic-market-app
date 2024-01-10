@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:market/core/constants/navigation/navigation_constants.dart';
 import 'package:market/feature/home/view/home_view.dart';
+import 'package:market/feature/product_detail/view/product_detail_view.dart';
 import 'package:market/feature/splash/view/splash_view.dart';
 
 class NavigationRoute {
@@ -15,6 +16,8 @@ class NavigationRoute {
         return normalNavigate(const SplashView());
       case NavigationConstants.HOME:
         return normalNavigate(const HomeView());
+      case NavigationConstants.PRODUCT_DETAIL:
+        return normalNavigate(const ProductDetailView());
       default:
         return normalNavigate(const SplashView());
     }

@@ -17,7 +17,9 @@ class _HomeViewState extends State<HomeView> {
     const List<Widget> widgetOptions = <Widget>[MarketView(), BasketView()];
 
     return ChangeNotifierProvider(
-        create: (_) => HomeProvider(), child: const _HomeContent(widgetOptions: widgetOptions));
+      create: (_) => HomeProvider(),
+      child: const _HomeContent(widgetOptions: widgetOptions),
+    );
   }
 }
 
