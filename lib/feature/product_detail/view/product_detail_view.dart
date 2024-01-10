@@ -29,6 +29,7 @@ class ProductDetailView extends StatelessWidget {
                 '\$${product!.price}',
                 style: context.bigTextStyle.copyWith(fontSize: 64),
               ),
+              ElevatedButton(onPressed: () {}, child: const Text('Add to Basket')),
             ],
           ),
         ));
