@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:market/feature/market/model/product_model.dart';
 
 class HomeProvider extends ChangeNotifier {
   int _pageIndex = 0;
