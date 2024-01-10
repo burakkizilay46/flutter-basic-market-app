@@ -36,7 +36,7 @@ class MarketProvider extends BaseProvider {
     }
   }
 
-  void navigateDetailPage() {
-    navigation.navigateToPage(path: NavigationConstants.PRODUCT_DETAIL);
+  void navigateDetailPage(ProductModel data) {
+    navigation.navigateToPage(path: NavigationConstants.PRODUCT_DETAIL, data: data);
   }
 }
