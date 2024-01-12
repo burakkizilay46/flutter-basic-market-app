@@ -21,7 +21,14 @@ class HomeProvider extends ChangeNotifier {
   }
 
   void removeToBasket(ProductModel product) {
-    basketProducts.remove(product);
+    if (basketProducts[product] == null) {
+      return;
+    }
+    if (basketProducts[product] == 1) {
+      basketProducts.removeWhere((key, value) => key == product);
+    } else {
+      basketProducts[product] = basketProducts[product]! - 1;
+    }
     notifyListeners();
   }
 

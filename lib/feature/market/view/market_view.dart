@@ -88,7 +88,8 @@ class _MarketViewState extends State<MarketView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                        onTap: () => context.read<HomeProvider>().addToBasket(item), child: const Icon(Icons.remove)),
+                        onTap: () => context.read<HomeProvider>().removeToBasket(item),
+                        child: const Icon(Icons.remove)),
                     Text("${context.watch<HomeProvider>().basketProducts[item] ?? 0}"),
                     GestureDetector(
                         onTap: () => context.read<HomeProvider>().addToBasket(item), child: const Icon(Icons.add)),
