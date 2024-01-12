@@ -29,6 +29,7 @@ extension ColorExtension on BuildContext {
   Color get mainAppColor => Colors.deepPurple;
   Color get appBlack => Colors.black;
   Color get appWhite => Colors.white;
+  Color get appColor => Colors.deepPurple;
 }
 
 extension TextStyleExtansion on BuildContext {
