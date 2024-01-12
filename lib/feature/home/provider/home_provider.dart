@@ -32,6 +32,18 @@ class HomeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  double get basketTotalPrice {
+    if (basketProducts.isEmpty) {
+      return 0;
+    } else {
+      double _total = 0;
+      basketProducts.forEach((key, value) {
+        _total += (key.price! * value);
+      });
+      return _total;
+    }
+  }
+
   void setPageIndex(int index) {
     _pageIndex = index;
     notifyListeners();

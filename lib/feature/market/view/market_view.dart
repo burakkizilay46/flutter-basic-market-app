@@ -77,7 +77,7 @@ class _MarketViewState extends State<MarketView> {
                 overflow: TextOverflow.ellipsis,
               ),
               Text(
-                '${item.price}',
+                "\$${item.price}",
                 style: context.bigTextStyle.copyWith(fontSize: 16),
               ),
               Container(
