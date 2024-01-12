@@ -5,13 +5,23 @@ class HomeProvider extends ChangeNotifier {
   int _pageIndex = 0;
   int get pageIndex => _pageIndex;
 
-  final List<ProductModel> _basketProducts = [];
-  List<ProductModel> get basketProducts => _basketProducts;
+  Map<ProductModel, int> basketProducts = {}; // Mükemmel bi kullanım!!!
+  List<ProductModel> get basketItems => basketProducts.keys.toList();
 
-  int get basketCount => _basketProducts.length;
+  int get basketCount => basketProducts.length;
 
   void addToBasket(ProductModel product) {
-    _basketProducts.add(product);
+    if (basketProducts[product] == null) {
+      basketProducts[product] = 1;
+      return;
+    } else {
+      basketProducts[product] = basketProducts[product]! + 1;
+    }
+    notifyListeners();
+  }
+
+  void removeToBasket(ProductModel product) {
+    basketProducts.remove(product);
     notifyListeners();
   }
 

@@ -58,12 +58,6 @@ class _MarketViewState extends State<MarketView> {
   Card _productsCard(ProductModel item, int index, BuildContext context) {
     return Card(
       child: ListTile(
-        trailing: GestureDetector(
-            onTap: () {
-              HomeProvider provider = Provider.of<HomeProvider>(context, listen: false);
-              provider.addToBasket(item);
-            },
-            child: const Icon(Icons.add)),
         title: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
@@ -86,6 +80,21 @@ class _MarketViewState extends State<MarketView> {
                 '${item.price}',
                 style: context.bigTextStyle.copyWith(fontSize: 16),
               ),
+              Container(
+                decoration:
+                    BoxDecoration(color: context.appColor.withOpacity(0.6), borderRadius: BorderRadius.circular(32)),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        onTap: () => context.read<HomeProvider>().addToBasket(item), child: const Icon(Icons.remove)),
+                    Text("${context.watch<HomeProvider>().basketProducts[item] ?? 0}"),
+                    GestureDetector(
+                        onTap: () => context.read<HomeProvider>().addToBasket(item), child: const Icon(Icons.add)),
+                  ],
+                ),
+              )
             ],
           ),
         ),
