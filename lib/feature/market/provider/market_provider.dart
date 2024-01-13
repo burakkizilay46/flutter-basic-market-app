@@ -1,6 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:market/core/base/provider/base_provider.dart';
 import 'package:market/core/constants/navigation/navigation_constants.dart';
+import 'package:market/core/service/product_service.dart';
 import 'package:market/feature/market/model/product_model.dart';
 
 class MarketProvider extends BaseProvider {
@@ -11,25 +11,15 @@ class MarketProvider extends BaseProvider {
   bool get isLoading => _isLoading;
 
   MarketProvider() {
-    getDatas();
+    fetchProductsData();
   }
 
-  Future<void> getDatas() async {
-    _isLoading = true;
-    notifyListeners();
-
+  Future<void> fetchProductsData() async {
     try {
-      final dio = Dio();
-      final response = await dio.get('https://fakestoreapi.com/products');
-
-      if (response.statusCode == 200) {
-        _products = (response.data as List).map((productData) => ProductModel.fromJson(productData)).toList();
-        notifyListeners();
-      } else {
-        print('Failed to fetch products. Status code: ${response.statusCode}');
-      }
-    } catch (error) {
-      print('Error fetching products: $error');
+      _isLoading = true;
+      notifyListeners();
+      _products = await ProductService().getDatas();
+    } catch (e) {
     } finally {
       _isLoading = false;
       notifyListeners();
