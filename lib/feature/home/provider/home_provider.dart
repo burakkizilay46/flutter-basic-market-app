@@ -13,6 +13,7 @@ class HomeProvider extends ChangeNotifier {
   void addToBasket(ProductModel product) {
     if (basketProducts[product] == null) {
       basketProducts[product] = 1;
+      notifyListeners();
       return;
     } else {
       basketProducts[product] = basketProducts[product]! + 1;
