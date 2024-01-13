@@ -23,18 +23,7 @@ class _MarketViewState extends State<MarketView> {
             if (marketProvider.isLoading) {
               return const Center(child: CircularProgressIndicator());
             } else {
-              return Column(
-                children: [
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Text('Products'.toUpperCase(), textAlign: TextAlign.start, style: context.bigTextStyle)),
-                  const Divider(color: Colors.black),
-                  Flexible(
-                    flex: 34,
-                    child: productsListView(marketProvider),
-                  ),
-                ],
-              );
+              return productsListView(marketProvider);
             }
           },
         ),

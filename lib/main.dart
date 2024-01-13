@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:market/core/navigation/navigation_routes.dart';
 import 'package:market/core/navigation/navigation_service.dart';
+import 'package:market/feature/market/provider/market_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider<MarketProvider>(create: (context) => MarketProvider()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

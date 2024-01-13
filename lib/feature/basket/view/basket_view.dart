@@ -18,6 +18,7 @@ class BasketView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final item = context.watch<HomeProvider>().basketItems[index];
                   return Card(
+                    elevation: 8,
                     child: Padding(
                       padding: EdgeInsets.all(16),
                       child: Row(
