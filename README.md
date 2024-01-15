@@ -1,6 +1,6 @@
-# Plaka Sorgu
+# Market App
 
-Bu uygulama, bir güvenlik görevlisinin görev yerinde giren çıkan araçları kontrol etmesi için tasarlanmıştır.
+Basit bir market uygulama senaryosu için hazırlanmış bir projedir.
 
 ## Özellikler
 
